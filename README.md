@@ -31,16 +31,16 @@ Simply add the following snippet to your GitHub actions workflow.
 
 ```yaml
 - name: Perform ShiftLeft Scan
-  uses: ShiftLeftSecurity/scan-action@master
+  uses: glav/scan-action-csharp@master
 ```
 
 To override the built-in language detection, use the `type` parameter.
 
 ```yaml
 - name: Perform ShiftLeft Scan
-  uses: ShiftLeftSecurity/scan-action@master
+  uses: glav/scan-action-csharp@master
   with:
-    type: "credscan,java,depscan"
+    type: "credscan,depscan"
 ```
 
 For a full example, refer to the [workflow](https://github.com/ShiftLeftSecurity/sast-scan/blob/master/.github/workflows/pythonapp.yml) file used by Scan to scan itself.
@@ -57,9 +57,9 @@ The action also produces HTML reports for the various scans. To upload the repor
 
 ```yaml
 - name: Perform ShiftLeft Scan
-  uses: ShiftLeftSecurity/scan-action@master
+  uses: glav/scan-action-csharp@master
   with:
-    type: "credscan,python"
+    type: "csharp"
   env:
     WORKSPACE: https://github.com/${{ github.repository }}/blob/${{ github.sha }}
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -79,15 +79,15 @@ In the above configuration, two environment variables are used to customise the 
 
 ### Automatic build
 
-Scan can attempt to build certain project types automatically. Java, node.js, rust, go and csharp are currently supported. To enable auto-build, set the environment variable `SCAN_AUTO_BUILD` as shown:
+Scan can attempt to build certain project types automatically. To enable auto-build, set the environment variable `SCAN_AUTO_BUILD` as shown:
 
 ```yaml
 - name: Perform ShiftLeft Scan
-  uses: ShiftLeftSecurity/scan-action@master
+  uses: glav/scan-action-csharp@master
   with:
-    type: "credscan,python"
+    type: "csharp"
   env:
-    WORKSPACE: https://github.com/${{ github.repository }}/blob/${{ github.sha }}
+    WORKSPACE: ""
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     SCAN_AUTO_BUILD: true
 ```
