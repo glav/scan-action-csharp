@@ -12,6 +12,7 @@
 ShiftLeft [Scan](https://slscan.io) is a free open-source security tool for modern DevOps teams. With an integrated multi-scanner based design, Scan can detect various kinds of security flaws in your application and infrastructure code in a single fast scan without the need for any _remote server_! The product supports a range of integration options: from scanning every push via a git hook to scanning every build and pull-request in the CI/CD pipelines.
 
 ## Highlighted Features
+* Note: This is a fork from the [original authors](https://github.com/ShiftLeftSecurity/scan-action) that is changed to use the C# specific container which has additional tooling to support C# projects.
 
 ### Supported scans
 
@@ -22,18 +23,7 @@ ShiftLeft [Scan](https://slscan.io) is a free open-source security tool for mode
 
 ### Languages supported
 
-- Salesforce Apex
-- bash
-- Go
-- Java
-- JSP
-- Node.js
-- Oracle PL/SQL
-- Python
-- Rust (Dependency and Licence scan alone)
-- Terraform
-- Salesforce Visual Force
-- Apache Velocity
+- C# (.NET Core and .NET framework)
 
 ## Getting Started
 
